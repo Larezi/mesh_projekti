@@ -1,4 +1,9 @@
 #Python virtual environment
 /.venv
+/__pycache__
 
-# Temporary files
+# Container files
+config.py
+
+# Database files
+*.db
