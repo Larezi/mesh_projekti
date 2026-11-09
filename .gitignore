@@ -1,5 +1,6 @@
 # Ignore local history folders
 SensorPCB/.history/
+SensorPCB/_restore_backup_*/
 
 # KiCad backup and temporary files
 *.bak
@@ -8,6 +9,7 @@ SensorPCB/.history/
 *.kicad_prl
 *.kicad_pcb-bak
 *.sch-bak
+*.lck
 
 # KiCad project-specific local settings (caches, window layouts)
 fp-info-cache
