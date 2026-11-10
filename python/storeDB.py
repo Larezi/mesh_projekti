@@ -19,7 +19,7 @@ def init_db():
 def insert_data(data):
     conn = sqlite3.connect(DB_NAME)
     cursor = conn.cursor()
-    cursor.execute("INSERT INTO data (data) VALUES (?)", (data,))
+    cursor.execute("INSERT INTO sensor_data (data) VALUES (?)", (data,))
     conn.commit()
     conn.close()
 
