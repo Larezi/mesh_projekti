@@ -19,7 +19,7 @@ def init_db():
 def insert_data(data):
     conn = sqlite3.connect(DB_NAME)
     cursor = conn.cursor()
-    cursor.execute("INSERT INTO sensor_data (data) VALUES (?)", (data,))
+    cursor.execute("INSERT INTO data (data) VALUES (?)", (data,))
     conn.commit()
     conn.close()
 
@@ -50,9 +50,11 @@ def main():
     try:
         client.connect(MQTT_BROKER, MQTT_PORT, 60)
         client.loop_forever()
+    except KeyboardInterrupt:
+        print("\nPysäytetään ohjelma")
+        client.disconnect()
     except Exception as e:
         print(f"Yhteyden muodostaminen epäonnistui: {e}")
 
 if __name__ == "__main__":
     main()
-    

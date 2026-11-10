@@ -32,7 +32,7 @@ def main ():
                     client.publish(MQTT_TOPIC, data)
                     print(f"Julkaistu data: {data}")
         except KeyboardInterrupt:
-            print("Pysäytetään ohjelma")
+            print("\nPysäytetään ohjelma")
             ser.close()
             client.loop_stop()
             break
