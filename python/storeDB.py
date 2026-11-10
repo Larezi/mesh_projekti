@@ -2,7 +2,7 @@ import sqlite3
 import paho.mqtt.client as mqtt
 from config import DB_NAME, MQTT_BROKER, MQTT_PORT, MQTT_TOPIC
 
-#--- DATA BASE FUNCTIONS ---#
+#--- TIETOKANTA FUNKTIOT ---#
 def init_db():
     conn = sqlite3.connect(DB_NAME)
     cursor = conn.cursor()
@@ -23,7 +23,7 @@ def insert_data(data):
     conn.commit()
     conn.close()
 
-#--- MQTT CALLBACK FUNCTIONS ---#
+#--- MQTT CALLBACK FUNKTIOT ---#
 def on_connect(client, userdata, flags, rc):
     if rc == 0:
         print("Yhteys MQTT brokeriin muodostettu onnistuneesti.")
@@ -40,6 +40,7 @@ def on_message(client, userdata, msg):
     except Exception as e:
         print(f"Virhe datan vastaanottamisessa: {e}")
 
+#--- MAIN FUNKTIO ---#
 def main():
     init_db()
 
